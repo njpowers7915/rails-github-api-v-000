@@ -11,6 +11,9 @@ class RepositoriesController < ApplicationController
     #@username = JSON.parse(resp.body)["items"]["owner"]["login"]
   end
 
+  def new
+  end
+
   def create
     resp = Faraday.post("https://api.github.com/uer/repos") do |req|
       req.params['oauth_token'] = session[:token]
