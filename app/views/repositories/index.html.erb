@@ -14,6 +14,6 @@
   <%= form_tag("/repositories/create", method: "post") do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
-    <%= submit_tag("Create") %>
+    <%= submit_tag "Add Repo" %>
   <% end %>
 </div>
