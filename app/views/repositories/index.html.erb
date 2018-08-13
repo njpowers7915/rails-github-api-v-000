@@ -11,7 +11,7 @@
     <p>Looks like you don't have any repositories.</p>
   <% end %>
 
-  <%= form_tag("/repositories/create", method: "post") do %>
+  <%= form_tag '/repositories' do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
     <%= submit_tag "Add Repo" %>
