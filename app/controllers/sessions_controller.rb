@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
       req.params['client_id'] = ENV['GITHUB_CLIENT_ID']
       req.params['client_secret'] = ENV['GITHUB_SECRET']
       req.params['code'] = params[:code]
-      req.params['access_token'] = params["access_token"]
-      #req.params['redirect_uri'] = "http://localhost:3000/auth"
+      #req.params['access_token'] = params["access_token"]
+      req.params['redirect_uri'] = "http://159.89.225.105:42817/auth"
       #req.params['code'] = params[:code]
     end
 
