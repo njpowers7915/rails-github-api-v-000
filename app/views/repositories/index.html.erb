@@ -1,7 +1,7 @@
 <div class = "container">
   <h1> USERNAME Repos</h1>
   <!-- List repositories here! -->
-  <% if @repos.size > 0 %>
+  <% if @repos %>
     <ul>
       <% @repos.each do |repo| %>
         <li><%= "#{repo['name']}" %></li>
