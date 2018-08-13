@@ -1,7 +1,20 @@
 class RepositoriesController < ApplicationController
   def index
+    resp = Faraday.get('https://api.github.com/uer/repos') do |req|
+      req.params['oauth_token'] = session[:token]
+      req.params['v'] = '3'
+    end
+    @repos = JSON.parse(resp.body)["response"]["items"]
+    @username = JSON.parse(resp.body)["response"]
   end
 
   def create
+    resp = Faraday.post("https://api.github.com/uer/repos") do |req|
+      req.params['oauth_token'] = session[:token]
+      req.params['v'] = '20160201'
+      req.params['name'] = params[:venue_id]
+    end
+
+    redirect_to repositories_path
   end
 end
