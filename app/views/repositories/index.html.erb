@@ -1,7 +1,7 @@
 <div class = "container">
-  <h1><%USERNAME%> Repos</h1>
+  <h1> USERNAME Repos</h1>
   <!-- List repositories here! -->
-  <% if @repos.size > 0 %>
+  <% if @repos %>
     <ul>
       <% @repos.each do |repo| %>
         <li><%= "#{repo['name']}" %></li>
@@ -11,9 +11,9 @@
     <p>Looks like you don't have any repositories.</p>
   <% end %>
 
-  <%= form_tag("/repositories/create", method: "post") do %>
+  <%= form_tag @repository do %>
     <%= label_tag(:name, "Create a New Repo:") %>
     <%= text_field_tag(:name, nil, id: "new-repo") %>
-    <%= submit_tag("Create") %>
+    <%= submit_tag "Add Repo" %>
   <% end %>
 </div>
