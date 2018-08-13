@@ -8,7 +8,7 @@ class RepositoriesController < ApplicationController
       #req.params['v'] = '3'
     end
     @repos = JSON.parse(resp.body)["items"]
-    @username = JSON.parse(resp.body)["response"]
+    @username = JSON.parse(resp.body)["items"]["owner"]["login"]
   end
 
   def create
