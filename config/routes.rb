@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/auth' => 'sessions#create'
-  resources :repositories, only: [:index, :create, :new]
+  resources :repositories, only: [:index, :create]
   #post '/repositories/create' => 'repositories#create'
   root 'repositories#index'
 
