@@ -17,7 +17,6 @@ class RepositoriesController < ApplicationController
       #req.params['v'] = '3'
       req.params['name'] = params[:name]
     end
-
     redirect_to repositories_path
   end
 end
