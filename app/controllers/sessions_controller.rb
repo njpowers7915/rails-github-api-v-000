@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
     body = JSON.parse(resp.body)
     #session[:token] = body["access_token"]
-    redirect_to repositories_path
+    redirect_to root_path
   end
 end
