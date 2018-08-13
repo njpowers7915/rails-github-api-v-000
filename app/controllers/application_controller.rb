@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       #access_token = ENV['GITHUB_AC']
       redirect_uri = CGI.escape("http://localhost:3000/auth")
       scope = 'repo'
-      github_url = "https://github.com/login/oauth/auth"
+      github_url = "https://github.com/login/oauth/authorize"
       redirect_to github_url unless logged_in?
     end
 
